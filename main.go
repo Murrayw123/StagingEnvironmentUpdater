@@ -34,7 +34,7 @@ func main() {
 	fmt.Println("Current branch:", string(branch))
 
 	// log into the remote server using ssh and update to the branch - run the post checkout script
-	sshCommand := "cd " + remoteDirectory + " && git pull origin " + string(branch) + postCheckout
+	sshCommand := "cd " + remoteDirectory + " && git fetch && git checkout -t origin/" + string(branch) + postCheckout
 
 	fmt.Println("Logging into server:", server)
 	fmt.Println("Running Command:", sshCommand)
